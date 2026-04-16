@@ -24,9 +24,9 @@ Usage:
 """
 
 from .camera_calibration import CameraCalibration
-from .tag_map import AprilTagMap
-from .pose_estimator import PoseEstimator
-from .fusion import PoseEstimate
+from .tag_map import AprilTagMap, TagDefinition
+from .pose_estimator import PoseEstimator, TagDetection
+from .fusion import PoseEstimate, fuse_poses, fuse_poses_with_median
 
 __version__ = "0.1"
 __all__ = [
@@ -34,4 +34,8 @@ __all__ = [
     "CameraCalibration",
     "AprilTagMap",
     "PoseEstimate",
+    "TagDetection",
+    "TagDefinition",
+    "fuse_poses",
+    "fuse_poses_with_median",
 ]
