@@ -2,6 +2,27 @@
 
 Estimate a robot's 2D global pose (X, Y, Yaw) using AprilTags with known positions.
 
+## Installation
+
+```bash
+pip install apriltag-pose-estimator
+```
+
+## Quick Start
+```py
+from apriltag_pose_estimator import PoseEstimator, CameraCalibration, AprilTagMap
+import cv2
+
+calibration = CameraCalibration.from_yaml("path/to/calibration.yaml")
+tag_map = AprilTagMap.from_json("path/to/tag_map.json")
+estimator = PoseEstimator(calibration, tag_map)
+
+cap = cv2.VideoCapture(0)
+ret, frame = cap.read()
+pose = estimator.estimate_pose(frame)
+print(f"Position: ({pose.x}, {pose.y}), Yaw: {pose.yaw}")
+```
+
 ## Getting Started
 
 ### 1. Print the AprilTags
@@ -139,4 +160,4 @@ For questions or issues, refer to the test files for usage examples and expected
 ---
 
 **Last Updated:** April 2026  
-**Version:** 1.0.0
+**Version:** 0.1

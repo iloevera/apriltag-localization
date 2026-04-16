@@ -23,23 +23,15 @@ Usage:
     print(f"Robot at ({pose.x:.2f}, {pose.y:.2f}), yaw={pose.yaw:.2f}, conf={pose.confidence:.2f}")
 """
 
-__version__ = "1.0.0"
-__author__ = "AprilTag Tour Guide Team"
-
 from .camera_calibration import CameraCalibration
-from .fusion import PoseEstimate, fuse_poses, fuse_poses_with_median
-from .pose_estimator import PoseEstimator, TagDetection
-from .tag_map import AprilTagMap, TagDefinition
-from . import utils
+from .tag_map import AprilTagMap
+from .pose_estimator import PoseEstimator
+from .fusion import PoseEstimate
 
+__version__ = "0.1"
 __all__ = [
     "PoseEstimator",
-    "TagDetection",
     "CameraCalibration",
     "AprilTagMap",
-    "TagDefinition",
     "PoseEstimate",
-    "fuse_poses",
-    "fuse_poses_with_median",
-    "utils",
 ]
